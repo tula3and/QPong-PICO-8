@@ -344,7 +344,9 @@ function update_title()
  if sub_mode==0 then
   if btnp(4) and
   menu_timer>1 then
-   if menu.options[menu.sel]=="start" then
+   if menu.options[menu.sel]=="2-player" then
+    new_game()
+   elseif menu.options[menu.sel]=="1-player" then
     new_game()
    elseif menu.options[menu.sel]=="colors" then
     init_settings()
@@ -897,8 +899,7 @@ function init_menu()
  menu.x=50
  cx=menu.x
  menu.y=70
- menu.options={"start","colors",
-            "credits"}
+ menu.options={"2-player","1-player","colors","credits"}
  menu.amt=0
  for i in all(menu.options) do
   menu.amt+=1
